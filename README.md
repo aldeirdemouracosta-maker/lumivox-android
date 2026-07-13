@@ -24,7 +24,7 @@ camadas funcionais das próximas etapas.
 
 - Android Studio compatível com AGP 8.13;
 - JDK 17;
-- Android SDK Platform 37 e Build Tools 37.0.0;
+- Android SDK Platform 36 e Build Tools 36.0.0;
 - Gradle 8.13.
 
 ## Gerar APK debug
@@ -85,4 +85,3 @@ No PowerShell:
 O `applicationId` atual é `br.com.lumivox.app`. Ele deve ser confirmado antes da
 primeira publicação, pois trocar o identificador depois cria outro aplicativo para
 o Android e para a Play Store.
-

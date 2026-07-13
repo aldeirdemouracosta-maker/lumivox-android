@@ -32,13 +32,13 @@ jobs:
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Instalar Android SDK 37
+      - name: Instalar Android SDK 36
         run: |
           yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platforms;android-37" "build-tools;37.0.0"
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
       - name: Executar testes e gerar APK debug
-        run: gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug
+        run: gradle --no-daemon clean :app:testDebugUnitTest :app:assembleDebug
 
       - name: Publicar APK debug
         uses: actions/upload-artifact@v4
@@ -71,10 +71,10 @@ jobs:
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Instalar Android SDK 37
+      - name: Instalar Android SDK 36
         run: |
           yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platforms;android-37" "build-tools;37.0.0"
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
       - name: Restaurar chave de assinatura
         env:
@@ -89,7 +89,7 @@ jobs:
           LUMIVOX_STORE_PASSWORD: ${{ secrets.LUMIVOX_STORE_PASSWORD }}
           LUMIVOX_KEY_ALIAS: ${{ secrets.LUMIVOX_KEY_ALIAS }}
           LUMIVOX_KEY_PASSWORD: ${{ secrets.LUMIVOX_KEY_PASSWORD }}
-        run: gradle --no-daemon :app:testDebugUnitTest :app:assembleRelease
+        run: gradle --no-daemon clean :app:testDebugUnitTest :app:assembleRelease
 
       - name: Publicar APK release
         uses: actions/upload-artifact@v4
