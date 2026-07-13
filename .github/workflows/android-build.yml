@@ -29,6 +29,9 @@ jobs:
         with:
           gradle-version: "8.13"
 
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Instalar Android SDK 37
         run: |
           yes | sdkmanager --licenses >/dev/null || true
@@ -65,6 +68,9 @@ jobs:
         with:
           gradle-version: "8.13"
 
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Instalar Android SDK 37
         run: |
           yes | sdkmanager --licenses >/dev/null || true
@@ -91,4 +97,3 @@ jobs:
           name: Lumivox-Android-release-assinado
           path: app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
-
