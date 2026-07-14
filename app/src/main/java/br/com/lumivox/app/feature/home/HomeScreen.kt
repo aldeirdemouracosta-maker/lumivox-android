@@ -19,7 +19,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -446,7 +445,7 @@ private fun FeatureCard(
 ) {
     val gradient = featureGradient(feature, highContrast)
     val icon = featureIcon(feature)
-    val borderColor = if (highContrast) Color.Cyan else gradient.first.copy(alpha = 0.95f)
+    val borderColor = if (highContrast) Color.Cyan else gradient.first().copy(alpha = 0.95f)
 
     Card(
         onClick = onClick,
